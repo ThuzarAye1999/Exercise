@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .all{
+          background-color: lightpink;
+          width:200px;
+          height: 150px;
+          margin: 40px;
+          text-align: center;
+          padding-top:50px;
+      }
+    </style>
+</head>
+<body>
+<div class="all">
+<label for="start">Enter Your date:</label><br>
+<input type="date" id="start"><br>
+<button type="button" onclick="checkDate()">Check</button>
+</div>
+<script>
+    function checkDate(){
+        var input=document.getElementById("start").value;
+        var date=new Date(input);
+        var year=date.getFullYear();
+        var d=new Date();
+        var cur=d.getFullYear();
+        var ans=cur-year;
+        if(ans<18){
+            alert("You under 18");
+        }
+        else{
+            alert("You over 18");
+        }
+    }
+</script>
+</body>
+</html>
