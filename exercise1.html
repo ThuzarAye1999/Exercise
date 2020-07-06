@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+         .row{
+           
+            background-color: lightgray;
+            margin:60px;
+            width: 1340px;
+            height: 1100px;
+           
+        }
+        .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+       .column{
+            float: left;
+            padding:0 10px;
+            width:23%;
+            height: 500px;
+            margin:20px;
+           }
+       .column::after{
+            clear: both;
+            content: "";
+            display: table;
+        }
+        .column1{
+            width:72%;
+            height:700px;
+            float:right;
+            
+            
+        }
+        .div1{
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            height: 320px;
+            width:auto;           
+        }
+        .div2{
+            background-color: white;
+            height: 400px; 
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+        }
+     div.container{
+         text-align: center;
+         padding-left:20px;
+     }
+  .fa-facebook-f {
+            background: gray;
+            color: white;
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            padding:2px;
+           
+            }
+            .fa-twitter{
+                background:gray;
+                border-radius:50%;
+                color:white;
+                height: 25px;
+               width: 25px;
+               padding:2px;
+            }
+            .fa-behance{
+                background:gray;
+                border-radius:50%;
+                color:white;
+                height: 25px;
+               width: 25px;
+               padding:2px;
+            }
+            .fa-instagram{
+                background:gray;
+                border-radius:50%;
+                height: 25px;
+               width: 25px;
+               padding:2px;
+               
+              
+            
+            }
+            .fa-linkedin-in{
+                background:gray;
+                border-radius:50%;
+                color:white;
+                height: 25px;
+            width: 25px;
+            padding:2px;
+            }
+            .fa-globe{
+                background:gray;
+                border-radius:50%;
+                height: 25px;
+            width: 25px;
+            padding:2px;
+            }
+            input[type=button]{
+           
+            color:white;
+            padding:14px 20px;
+            margin:8px 0;
+            border:1px solid black;
+            background-color: blue;
+        }
+       
+        .active{
+            background-color: blue;
+        }
+        ul {
+  list-style-type: none;
+  background-color: white;
+  overflow: hidden;
+ 
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.fa-search{
+    text-align: center;
+    padding:20px;
+}
+
+div.overtest{
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+ 
+}
+  
+
+.icon{
+     width: 200px;
+    height:50px;
+    padding-top:20px;
+    padding-left: 20px;
+}
+
+div.navbar{
+    width: 900px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+div.clearfix{
+    overflow:auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fa-square{
+    float: right;
+}
+div.final{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 650px;
+    margin-top: 20px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  padding: 10px;
+  float: left;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 30px;
+  width:170px;
+  height:170px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.div4{
+    float: right;
+}
+.pic{
+    font-size: 15px;
+}
+.fa-comment-dots{
+    position: absolute;
+   z-index: inherit;
+  font-size:24px;
+  background: red;
+  border-radius:50%;
+  width:50px;
+  height: 50px;
+  padding: 13px;
+  color:white;
+  margin-top:20px;
+ 
+}
+#square1{
+    float:right;
+    position: absolute;
+    right:220px;
+    top:240px;
+}
+#square2{
+    float:right;
+    position:absolute;
+    right:220px;
+    top:260px;
+}
+#square3{
+    float:right;
+    position: absolute;
+    right:220px;
+    top:280px;
+}
+
+    </style>
+</head>
+<body>
+<div class="row">
+        <div class="column" style="overflow-y: scroll;">
+                <div class="div1">
+                   <img src="ui.jfif" style="width: 200px;height: 200px;margin-left: auto;margin-right: auto;display: block;">
+                   <div class="container">
+                        <h2>Akshay Handge</h2>
+                        <p style="font-size:small;"><span style="color:blue;">UI/UX Designer</span>in Dewas</p>
+                   </div>
+                </div>
+                <div class="div2">
+                <div class="icon">
+                    <i class='fab fa-facebook-f' style='font-size:20px'></i>
+                    <i class='fab fa-twitter' style='font-size:20px;'></i>
+                    <i class='fab fa-behance' style='font-size:20px'></i>
+                    <i class='fab fa-instagram' style='font-size:20px'></i>
+                    <i class='fab fa-linkedin-in' style='font-size:20px'></i>
+                    <i class="fa fa-globe" style="font-size:20px"></i>
+                </div>
+               <div class="overtest">
+                    <h3>WHAT IS IN MY MINE</h3>
+                    We can develop  and design anything beyond your ima gination .About our work, we don't say anythih because our work speaks.For more you can ask our clie nts and they will tell you how muchsatisfied they are with our services. So, what are you waiting for?
+                </div>
+            </div>
+               
+        </div>
+        <div class="column1">
+            <div class="navbar">
+                <ul>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skill">Skill</a></li>
+                    <li><a href="#edu">Education</a></li>
+                    <li><a href="#por">Portfolio</a></li>
+                    <li><a href="#test">Testirmonial</a></li>
+                    <li><a href="#exp">Experience</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa fa-search"></i>
+                </ul>
+            </div>
+            <div style="background-color: white;width: 900px;height:250px;padding:20px;" class="clearfix">
+                <span style="float: left;line-height: 80%;"><h1>Hello.</h1><h4>My name is Akshay</h4><h10>& I am absoultely design addicted</h10><br><br><br><button type="button" style="border:1px solid black;width:140px;height:40px;background-color: blue;color:white;"><i class='far fa-image'></i>&nbsp;&nbsp;View Protfolio</button></span>
+                <span style="float: right;margin-right: 30%;"><i class='far fa-comment-dots'></i><img src="ui.jfif" style="width: 200px;height: 200px;border-radius: 50%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></span>
+                    <i class="fa fa-square" style="color:blue;" id="square1"></i><br>
+                    <i class="fa fa-square" style="color:gray;font-size: 10px;" id="square2"></i><br>
+                    <i class="fa fa-square" style="color:gray;font-size:9px;" id="square3"></i><br>
+            </div>
+            <div class="final" style="background-color: white;width:900px;padding:20px;">
+                <span><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<b style="font-size: 20px;">About Me</b></span>
+                <p style="line-height: normal;text-align: justify;">Hi, 1'm Akshay Handge Creative Graphic Design & User Experience designs based on the website, 1 digital products Creative a more beautiful and usable place. This is Photoshop's version of lorem ipsum. Nibh pregnant microwave or outdoor deeds. Aenean sollicitudin, lorem quis vivendum auctorm busu ekut cibseqyat uosynm bec aduouscubg ekut bubg saguttus sem. Homeworkand hated by a lot of carrots nih vulpuate running start. Outdoorsoccer layer itself . For also eventhat our earth if from odio tincidunt.</p>
+                <div class="grid-container">
+                    <div style="border-bottom: 3px solid blue;"><i class='far fa-lightbulb' style="font-size:30px;color:blue;margin-top:50px;"></i><p class="pic">Logo Design</p></div>
+                    <div style="border-bottom: 3px solid brown;"><i class="fa fa-globe" style="font-size:25px;color:brown;margin-top:60px;"></i><p class="pic">Website</p></div>
+                    <div style="border-bottom: 3px solid yellow;"><i class="fa fa-desktop" aria-hidden="true" style="color:yellow;margin-top:50px;"></i><p class="pic">Softwres</p></div>
+                    <div style="border-bottom: 3px solid violet"><i class="fa fa-mobile" aria-hidden="true" style="margin-top:50px;color:violet"></i><p class="pic">Applications</p></div>
+                </div>
+                <div class="div4">
+                    <b style="font-size: 20px;">PERSONAL DETAILS</b>
+                    <div style="line-height: 40px;">
+                    <div style="float: left;margin-right: 9px;">
+                        <p>Full Name</p>
+                        <p>Father's Name</p>
+                        <p>Address</p>
+                        <p>Zip Code</p>
+                        <p>Phone</p>
+                        <p>Email</p>
+                        <p>Website</p>
+                    </div>
+                    <div style="float:right">
+                        <p>:Akshay Handge</p>
+                        <p>:Mr.Deepak Handge</p>
+                        <p>:Street 110-B Kalani Bag, Dewas, M.P. INDIA</p>
+                        <p>:12345</p>
+                        <p>:+0 123456789, +0 123456789</p>
+                        <p>:support@example.com</p>
+                        <p>:http://example.com</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+</body>
+</html>
