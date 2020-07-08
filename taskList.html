@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #btn{
+            width:100px;
+            border-radius: 50px;
+            height:30px;
+        }
+        #tname{
+            width:300px;
+            height:30px;
+            border-radius: 50px;
+        }
+        #res{
+            width:400px;
+            height: 30px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div>
+    <h4>Today Task</h4>
+    <label for="tname">Task Name</label>&nbsp;&nbsp;
+    <input type="text" id="tname">&nbsp;&nbsp;&nbsp;
+    <button type="button" id="btn" onclick="getTask()">Add</button><br><br>
+</div>
+    <p>Task List</p>
+    <section id="res">
+
+    </section>
+    <script>
+        function getTask(){
+            var taskList=[];
+            var task1=document.getElementById("tname").value;
+            var p=document.createElement("p");
+            var btn=document.createElement("button");
+            btn.setAttribute("class","fa fa-remove");
+            btn.style.float="right";
+            btn.style.color="red";
+            btn.style.height="25px";
+            p.style.border="1px solid black";
+            p.appendChild(document.createTextNode(task1));
+            var input=document.getElementById("res");
+            input.appendChild(p);
+             p.appendChild(btn);
+           btn.addEventListener("click",myFunction);
+           function myFunction(){
+                   input.removeChild(p);
+           }
+           
+            }
+    </script>
+
+</body>
+</html>
