@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .div1{
+             width: 400px;
+             height: 150px;
+             border: 1px solid green;
+             padding: 8px 10px;
+        }
+        .div2{
+            width:400px;
+            height: 230px;
+           border:1px solid violet;
+           margin:8px 0;
+           padding: 8px 10px;
+        }
+        
+       
+       
+            input[type=text]{
+            width: 380px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+        .column{
+            float: left;
+            width: 27%;
+        }
+        .row{
+            margin:0 35px;
+            border:1px solid black;
+            width: 900px;
+            height: 550px;
+            background-color: gray;
+            padding:0 20px;
+           
+        }
+        .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 400px) {
+  .column {
+    display: block;
+   
+  }
+}
+.grid-container {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+  padding: 5px 20px;
+  grid-template-rows: 100px 400px;
+  padding-left:350px;
+  align-content: top;
+ 
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 2px 0;
+  font-size: 20px;
+}
+        input[type=submit]{
+            width:150px;
+            color:yellowgreen;
+            padding:14px 20px;
+            margin:8px 0;
+            border:1px solid yellowgreen;
+            border-radius:4px;
+        }
+        input[type=button]{
+            width:150px;
+            color:violet;
+            padding:14px 20px;
+            margin:8px 0;
+            border-radius:4px;
+            border:1px solid violet;
+        }
+        #aee{
+            border:1px solid violet;
+            color:violet;
+        }
+       #bee{
+           border:1px solid green;
+           color:yellowgreen;
+       }
+       #item1{
+           grid-column: 1 / span 3;
+           padding-top:50px;
+           grid-template-rows: 70px 400px;
+           width:300px;
+           align-content: top;
+           grid-template-rows: 100px 400px;
+       }
+      
+        td,th{
+            text-align: center;
+           font-size: 20px;
+            padding:5px;
+            width:30%;
+        }
+     #aa{
+         margin-bottom:50%;
+         top:30%;
+     }
+    </style>
+</head>
+<body style="margin:70px;">
+<div class="row">
+        <h3>BUDGET APP</h3>
+    <div class="column">
+           <div  class="div1">
+              <form>
+                     <label for="budget">Please Enter Your Budget</label><br>
+                     <input type="text" id="budget" name="budget"><br>
+                     <button type="button" id="bee">Calculate</button>
+             </form>
+           </div> 
+         <div  class="div2">
+                 <form>
+                     <label for="expensename">Please Enter Your Expense</label><br>
+                     <input type="text" id="expensename" name="expensename" width="100px" height="50px"><br>
+                     <label for="expenseamount">Plese Enter Expense Amount</label><br>
+                     <input type="text" id="examt" name="expenseamount"><br>
+                     <button type="button" id="aee">Add Expense</button>
+                </form>
+        </div>
+    </div>
+ <div class="column">
+   <div class="grid-container">
+    
+     <div><h6 style="margin-top:0%;">BUDGET</h6><i class="fa fa-money" style="font-size:48px;color:darkblue;margin-top:0%;"></i><h4 style="margin-top:2%;">$<span id="bud">0</span></h4></div>
+     <div><h6 style="margin-top:0%;">Expense</h6><i class="fa fa-credit-card" style="font-size:48px;color:darkblue;margin-top:0%;"></i><h4 style="margin-top:2%;">$<span id="ex">0</span></h4></div>
+     <div><h6 style="margin-top:0%;">BALACE</h6><i class="fa fa-dollar" style="font-size:48px;color:darkblue;margin-top:0%;"></i><h4 style="margin-top:2%;">$<span id="bal">0</span></h4></div>
+   
+     <div id="item1">
+    <table style="width:150%;">
+     <thead>
+        <tr>
+            <td>Expense Title</td>
+            <td>Expense Value</td>
+        </tr>
+    </thead>
+    <tbody id="body">
+
+    </tbody>
+    </table> 
+     </div>
+</div>
+</div>
+</div>
+
+     <script>
+        $(document).ready(function(){
+               $("#bee").click(function(){
+                   var newbud=parseInt($("#budget").val());
+                   var oldbud=parseInt($("#bud").text());
+                   oldbud+=newbud;
+                   $("#bud").text(oldbud);
+                   $("#bal").text(oldbud);
+               });
+        });
+        $(document).ready(function(){
+            $("#aee").click(function(){
+                var newexname=$("#expensename").val();
+                var oldexname=$("#eti").text();
+                oldexname+=newexname;
+                var newexamt=parseInt($("#examt").val());
+                var oldexamt=parseInt($("#ex").text());
+                oldexamt+=newexamt;
+                $("#ex").text(oldexamt);
+                var tbal=$("#bal").text();
+                var oldbal=parseInt(tbal);
+                oldbal-=newexamt;
+                $("#bal").text(oldbal);
+                $("#body").append('<tr>'
+                +'<td>'+'-'+newexname+'</td>'
+                +'<td>'+newexamt+'</td>'
+                +'<td>'+'<button type="button" class="fa fa-edit" style="font-size:24px;color:darkblue;"></button><button type="button" class="fa fa-trash-o" style="font-size:24px;color:red"></button>'+'</td>'
+                +'</tr>');
+               
+          });
+        });
+        
+     </script>  
+</body>
+</html>
