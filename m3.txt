@@ -1,0 +1,164 @@
+
+mysql> select * from Team;
++----+----------------+-------------+
+| id | name           | foundeddate |
++----+----------------+-------------+
+|  1 | ManU           | 1880-06-20  |
+|  2 | Liverpool      | 1892-07-15  |
+|  3 | Premier League | 1992-02-20  |
+|  4 | Chelsea        | 1905-03-10  |
+|  5 | Arsenal        | 1886-09-10  |
+|  6 | Real Madrid    | 1902-03-06  |
++----+----------------+-------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from Player;
++----+--------------------+---------+------+---------+--------+---------+
+| id | name               | jersyno | age  | salary  | height | team_id |
++----+--------------------+---------+------+---------+--------+---------+
+|  1 | Lionel Messi       |       1 |   25 |   20000 |      5 |       1 |
+|  2 | Cristiano Ronaldo  |       2 |   27 |  320000 |      6 |       1 |
+|  3 | Xavi               |       3 |   32 |  400000 |      6 |       1 |
+|  4 | Andress Iniesta    |       4 |   28 |  400000 |      6 |       2 |
+|  5 | Zlatan Lbrahimovic |       5 |   31 |  300000 |      6 |       2 |
+|  6 | Radamel Falcao     |       6 |   28 |  300000 |      6 |       3 |
+|  7 | David Silva        |      10 |   27 |  900000 |      8 |       3 |
+|  8 | Mason Greenwood    |       5 |   24 |  700000 |      7 |       4 |
+|  9 | Kun Augero         |       7 |   23 | 1100000 |      8 |       4 |
+| 10 | Eden Hazard        |      19 |   27 | 1200000 |      9 |       5 |
+| 11 | Harry Maguire      |      21 |   30 | 1000000 |      7 |       5 |
+| 12 | David Degea        |       7 |   24 |  800000 |      7 |       6 |
+| 13 | Paul Pagba         |      22 |   26 |  900000 |      8 |       6 |
+| 14 | Daniel James       |      19 |   23 | 1000000 |      9 |       6 |
++----+--------------------+---------+------+---------+--------+---------+
+14 rows in set (0.00 sec)
+1.
+mysql> select * from Player where team_id=1;
++----+-------------------+---------+------+--------+--------+---------+
+| id | name              | jersyno | age  | salary | height | team_id |
++----+-------------------+---------+------+--------+--------+---------+
+|  1 | Lionel Messi      |       1 |   25 |  20000 |      5 |       1 |
+|  2 | Cristiano Ronaldo |       2 |   27 | 320000 |      6 |       1 |
+|  3 | Xavi              |       3 |   32 | 400000 |      6 |       1 |
++----+-------------------+---------+------+--------+--------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from Player where team_id=2;
++----+--------------------+---------+------+--------+--------+---------+
+| id | name               | jersyno | age  | salary | height | team_id |
++----+--------------------+---------+------+--------+--------+---------+
+|  4 | Andress Iniesta    |       4 |   28 | 400000 |      6 |       2 |
+|  5 | Zlatan Lbrahimovic |       5 |   31 | 300000 |      6 |       2 |
++----+--------------------+---------+------+--------+--------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Player where team_id=3;
++----+----------------+---------+------+--------+--------+---------+
+| id | name           | jersyno | age  | salary | height | team_id |
++----+----------------+---------+------+--------+--------+---------+
+|  6 | Radamel Falcao |       6 |   28 | 300000 |      6 |       3 |
+|  7 | David Silva    |      10 |   27 | 900000 |      8 |       3 |
++----+----------------+---------+------+--------+--------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Player where team_id=4;
++----+-----------------+---------+------+---------+--------+---------+
+| id | name            | jersyno | age  | salary  | height | team_id |
++----+-----------------+---------+------+---------+--------+---------+
+|  8 | Mason Greenwood |       5 |   24 |  700000 |      7 |       4 |
+|  9 | Kun Augero      |       7 |   23 | 1100000 |      8 |       4 |
++----+-----------------+---------+------+---------+--------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Player where team_id=5;
++----+---------------+---------+------+---------+--------+---------+
+| id | name          | jersyno | age  | salary  | height | team_id |
++----+---------------+---------+------+---------+--------+---------+
+| 10 | Eden Hazard   |      19 |   27 | 1200000 |      9 |       5 |
+| 11 | Harry Maguire |      21 |   30 | 1000000 |      7 |       5 |
++----+---------------+---------+------+---------+--------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Player where team_id=6;
++----+--------------+---------+------+---------+--------+---------+
+| id | name         | jersyno | age  | salary  | height | team_id |
++----+--------------+---------+------+---------+--------+---------+
+| 12 | David Degea  |       7 |   24 |  800000 |      7 |       6 |
+| 13 | Paul Pagba   |      22 |   26 |  900000 |      8 |       6 |
+| 14 | Daniel James |      19 |   23 | 1000000 |      9 |       6 |
++----+--------------+---------+------+---------+--------+---------+
+3 rows in set (0.00 sec)
+
+2.
+mysql> select name from Player where salary>500000;
++-----------------+
+| name            |
++-----------------+
+| David Silva     |
+| Mason Greenwood |
+| Kun Augero      |
+| Eden Hazard     |
+| Harry Maguire   |
+| David Degea     |
+| Paul Pagba      |
+| Daniel James    |
++-----------------+
+8 rows in set (0.11 sec)
+
+3.
+mysql> select Team.name,(select SUM(Player.salary) from Player where Player.team_id=Team.id)AS totalSalary from Team  group by Team.name;
++----------------+-------------+
+| name           | totalSalary |
++----------------+-------------+
+| ManU           |      740000 |
+| Liverpool      |      700000 |
+| Premier League |     1200000 |
+| Chelsea        |     1800000 |
+| Arsenal        |     2200000 |
+| Real Madrid    |     2700000 |
++----------------+-------------+
+6 rows in set (0.00 sec)
+4.
+
+mysql> select * from Player where height<'5.0';
+Empty set (0.00 sec)
+
+5.
+mysql> select Team.name,AVG(Player.salary)As average_salary from Player,Team where Player.id=Team.id group by Team.name;
++----------------+----------------+
+| name           | average_salary |
++----------------+----------------+
+| ManU           |     20000.0000 |
+| Liverpool      |    320000.0000 |
+| Premier League |    400000.0000 |
+| Chelsea        |    400000.0000 |
+| Arsenal        |    300000.0000 |
+| Real Madrid    |    300000.0000 |
++----------------+----------------+
+6 rows in set (0.00 sec)
+6.
+mysql> select name,salary from Player where salary in (select MIN(salary) from Player);
++--------------+--------+
+| name         | salary |
++--------------+--------+
+| Lionel Messi |  20000 |
++--------------+--------+
+1 row in set (0.00 sec)
+
+mysql> select name,salary from Player where salary in (select MAX(salary) from Player);
++-------------+---------+
+| name        | salary  |
++-------------+---------+
+| Eden Hazard | 1200000 |
++-------------+---------+
+1 row in set (0.00 sec)
+7.
+
+mysql> select name from Player where age>30 AND salary>20000;
++--------------------+
+| name               |
++--------------------+
+| Xavi               |
+| Zlatan Lbrahimovic |
++--------------------+
+2 rows in set (0.00 sec)
