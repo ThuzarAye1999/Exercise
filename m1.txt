@@ -67,13 +67,15 @@ mysql> select Food.name as Item_Name,OrderTable.totalprice as TotalMaximumSaleAm
 +----------------+------------------------+
 3 rows in set (0.00 sec)
 
-mysql> select Food.name,OrderTable.totalprice from Food,OrderTable where Food.id=OrderTable.food_id and qty in (select MIN(qty) from OrderTable);
-+--------------+------------+
-| name         | totalprice |
-+--------------+------------+
-| Cheese Pizza |       1300 |
-+--------------+------------+
+
+mysql> select SUM(OrderTable.totalprice) as TotalSaleAmount from OrderTable where sale_date BETWEEN '2017-04-30' AND '2020-08-17';
++-----------------+
+| TotalSaleAmount |
++-----------------+
+|          228300 |
++-----------------+
 1 row in set (0.00 sec)
+
 
 
 2.
